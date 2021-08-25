@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    let API_KEY="" //enter the API key here
+    let API_KEY="AIzaSyBN98yeJut90WIFgL_3MBAzl29H4dE1tM4" //enter the API key here
     $("#form").submit(function(event) {
         event.preventDefault();
         let search=$("#search").val();
@@ -17,6 +17,6 @@ $(document).ready(function(){
     )})
     }
 else
-alert("please input s valid keyword")}
+alert("please input a valid keyword")}
 
 })
