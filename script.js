@@ -17,6 +17,6 @@ $(document).ready(function(){
     )})
     }
 else
-alert("please input s valid keyword")}
+alert("please input a valid keyword")}
 
 })
