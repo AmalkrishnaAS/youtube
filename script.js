@@ -11,7 +11,7 @@ $(document).ready(function(){
         if(search.trim().length!=0){
         $.get("https://www.googleapis.com/youtube/v3/search?part=snippet&key="+key+"&type=video&part=snippet&maxResults="+count+"&q="+search,function(data){console.log(data)
     data.items.forEach(function(item){
-        video=`<iframe width="560" height="315" src="https://www.youtube.com/embed/${item.id.videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+        video=`<iframe width="560" height="315" src="https://www.youtube.com/embed/${item.id.videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="card"></iframe>`
         $("#videos").append(video);
     }
     )})
