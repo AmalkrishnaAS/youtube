@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    let API_KEY="AIzaSyD9Ay-_KQTUbW1Mia8l6D-cNcZ-IjenrpY" //enter the API key here
+    let API_KEY="" //enter the API key here
     $("#form").submit(function(event) {
         event.preventDefault();
         let search=$("#search").val();
