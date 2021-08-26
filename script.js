@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    let API_KEY="" //enter the API key here
+    let API_KEY="AIzaSyD9Ay-_KQTUbW1Mia8l6D-cNcZ-IjenrpY" //enter the API key here
     $("#form").submit(function(event) {
         event.preventDefault();
         let search=$("#search").val();
@@ -11,8 +11,13 @@ $(document).ready(function(){
         if(search.trim().length!=0){
         $.get("https://www.googleapis.com/youtube/v3/search?part=snippet&key="+key+"&type=video&part=snippet&maxResults="+count+"&q="+search,function(data){console.log(data)
     data.items.forEach(function(item){
-        video=`<iframe width="560" height="315" src="https://www.youtube.com/embed/${item.id.videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="card"></iframe>`
+        $.get(`https://www.googleapis.com/youtube/v3/videos?id=${item.id.videoId}&part=contentDetails&key=AIzaSyBN98yeJut90WIFgL_3MBAzl29H4dE1tM4`,function(details){video=`<div class=instance><iframe width="560" height="315" src="https://www.youtube.com/embed/${item.id.videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="card"></iframe>
+        
+        <h4>Duration:${details.items[0].contentDetails.duration}</h4></div>`
+        
         $("#videos").append(video);
+});
+        
     }
     )})
     }
